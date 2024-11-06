@@ -104,7 +104,7 @@ input:hover {
 
 
 .gap1 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -130,7 +130,8 @@ input:hover {
 }
 
 @media (max-width: 600px) {
-     .gap1 {
+
+    .gap1 {
         display: none;
 
     }

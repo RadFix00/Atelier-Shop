@@ -114,7 +114,8 @@ new Vue({
         email: '',
         password: '',
         username: '',
-        comment: ''
+        errorMessage:"",
+        apiUrl:"http://127.0.0.1:5000/login"
     },
     computed: {
         cartItems() {
@@ -141,6 +142,29 @@ new Vue({
         },
         pagar() {
             alert("Proceso de pago");
+        },
+        async login() {
+            if (this.username.trim() === "" || this.password.trim() === "") {
+                this.errorMessage = "No se ha podido iniciar sesion faltan datos"   
+                return;
+            }
+            else {
+                try {
+                    const response = await axios.post(this.apiUrl, {
+                        username: this.username,
+                        password: this.password
+                    });
+
+                    if (response.data.message === 'Login Exitoso') {
+                        window.location.href = './index.html'
+                    } else {
+                        this.errorMessage = "No se ha podido Iniciar Sesion. Verifique sus credenciales"
+                    }
+                } catch (error) {
+                    this.errorMessage = "Usuario o Contraseña Incorrectos"
+                    console.error(error);
+                }
+            }
         }
     }
 });
