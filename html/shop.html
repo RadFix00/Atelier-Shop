@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="/css/shop.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex@3.6.2/dist/vuex.js"></script>
+</head>
+<body>
+    <div id="preloader">
+        <div class="spinner"><img src="/img/loader.png" alt=""></div>
+        <h1>Loading...</h1>
+    </div>
+
+    <header class="carrusel">
+        <div class="ofertas"><a href="">pantalon 50% descuento</a></div>
+        <div class="ofertas"><a href="">camiseta 30% descuento</a></div>
+        <div class="ofertas"><a href="">pantaloneta 20% descuento</a></div>
+        <div class="ofertas"><a href="">cargo jean 40% descuento</a></div>
+        <div class="ofertas"><a href="">buzo overzide 70% descuento</a></div>
+        <div class="ofertas"><a href="">medias high 10% descuento</a></div>
+        <div class="ofertas"><a href="">medias high 10% descuento</a></div>
+    </header>
+
+
+    <section>
+
+        <div class="home">
+            <img class="img-letter" src="/img/letter.png" alt="letter">
+            <div class="icons">
+                <a onclick="openUser()"><img src="/img/login.png" alt=""></a>
+                <a onclick="openCarrito()" ><img src="/img/car.png" alt="" ></a>
+            </div>
+            <div class="navegation">
+                <a href="/index.html"><input type="button" value="HOME"></a>
+                <a href="/html/shop.html"><input type="button" value="SHOP"></a>
+                <a href="/html/catalog.html"><input type="button" value="CATALOG"></a>
+                <a href=""><input type="button" value="CONTACT"></a>
+                <a href=""><input type="button" value="PRE-ORDER"></a>
+            </div> 
+            <h1 id="clock">00:00:00</h1>
+        </div>
+        
+        <div id="app">
+                <div class="cont-search">
+                    <input class="search" type="text" v-model="busqueda" placeholder="Buscar" autocomplete="" required>
+                </div>
+                
+                <div class="product-grid">
+                    <div v-for="producto in productosFiltrados" :key="producto.id" class="card">
+                        <img :src="producto.imagen" alt="imagen de carro">
+                        <div class="marca">{{ producto.marca }}</div>
+                        <div class="price">$ {{ producto.price }} COP</div>
+                        <input @click="addToCart(producto)" onclick="openCarrito()" class="btnn" type="button" value="Comprar">
+                    </div>
+                </div>
+                <div v-if="productosFiltrados.length === 0">
+                    <h1>No se encontraron productos.</h1>
+                </div>
+
+
+            <div class="fondo" id="fondo">D</div>
+            <div class="index" id="index">
+                <div class="form">
+
+                    
+
+                    <div v-if="currentForm === 'login'">
+                        <h3 class="mb-4">Iniciar Sesión</h3>
+                        <form @submit.prevent="login">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" v-model="email" class="form-control" placeholder="Ingresa tu email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" id="password" v-model="password" class="form-control"
+                                    placeholder="Ingresa tu contraseña">
+                            </div>
+                            <button type="submit" class="">Iniciar Sesión</button>
+                        </form>
+                    </div>
+
+                    <div v-if="currentForm === 'register'">
+                        <h3 class="mb-4">Registrarse</h3>
+                        <form @submit.prevent="register">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Usuario</label>
+                                <input type="text" id="username" v-model="username" class="form-control"
+                                    placeholder="Ingresa tu nombre de usuario">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" v-model="email" class="form-control" placeholder="Ingresa tu email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" id="password" v-model="password" class="form-control"
+                                    placeholder="Ingresa tu contraseña">
+                            </div>
+                            <button type="submit" class="">Registrarse</button>
+                        </form>
+                    </div>
+                    <div>
+                        <button @click="currentForm = 'login'">Iniciar Sesión</button>
+                        <button @click="currentForm = 'register'">Registrarse</button>
+                    </div>
+                    <button class="btn-cerrarcarrito" @click="closeUser()">X</button>
+                </div>
+            </div>
+            
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+                <div class="cart">
+                    <!-- <h2>Carrito</h2>-->
+                    <div v-if="cartItems.length > 0" v-for="item in cartItems" :key="item.id" id="car" class="car">
+                        <img :src="item.imagen" alt="" class="cart-item-image">
+                        <p class="marca"> {{item.marca}} </p>
+                        <p class="price"> {{ item.price }} COP</p>
+                        <p class="talla"> Talla {{ item.talla }} </p>
+                        <div class="btn-cant">
+                            <button class="btn-añadir" @click="addFromCart(item.id)">+</button>
+                            <p class="cantidad">{{ item.quantity }}</p>
+                            <button class="btn-eliminar" @click="removeFromCart(item.id)">-</button>
+                        </div>
+                    </div>
+                    <h3 v-if="cartItems.length > 0">Total Carrito: {{ cartTotal}} COP</h3>
+                    <button class="btn-pagar" @click="pagar">Realizar Compra</button> <!-- comentario -->
+                    <div v-else>
+                        <p class="item">No hay productos en el carrito.</p>
+                    </div>
+                </div>
+                <button class="btn-cerrarcarrito" @click="closeCarrito()">X</button>
+                
+            </div>
+
+        </div>
+       
+        
+    </section>
+    <footer>
+    </footer>
+    <script src="/js/preload.js"></script>
+</body>
+</html>
+
+

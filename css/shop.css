@@ -1,0 +1,594 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    padding: 0px;
+    cursor: url(/img/cursor.png), auto;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    position: relative;
+    margin: 0 10px;
+    animation: spin 1s linear infinite;
+}
+
+.spinner img {
+    width: 140px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.carrusel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    animation: slide 3s infinite alternate ease-in-out;
+    border-bottom: 1px solid black;
+}
+
+.ofertas {
+    font-size: 20px;
+    flex: 1 0 auto;
+    margin: 10px 30px -10px;
+    max-width: auto;
+    height: 50px;
+    font-weight: bold;
+}
+
+.ofertas a {
+    text-decoration: none;
+    color: black;
+}
+
+.ofertas a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0%;
+    }
+
+    100% {
+        margin-left: -28%;
+    }
+
+}
+
+
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.home h1 {
+    margin: 20px 0px;
+    font-size: 35px;
+}
+
+.img-letter {
+    width: 70%;
+    margin-top: 30px;
+}
+
+.icons {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: black;
+}
+
+.icons a img {
+    width: 50px;
+    transition: transform 0.2s;
+}
+
+.icons a img:hover {
+    transform: scale(1.2);
+}
+
+.icons a img:active {
+    transform: scale(0.8);
+}
+
+.navegation input {
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 20px;
+    color: black;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.navegation input:hover {
+    transform: scale(1.2);
+}
+
+.navegation input:active {
+    transform: scale(0.8);
+    color: gray;
+}
+
+.cont-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    border: 2px solid black;
+    width: 50%;
+    padding: 6px;
+    color: black;
+    transition: background-color 1s ;
+}
+
+.search::placeholder{
+    color: gray;
+    font-size: 22px;
+}
+
+.search:focus {
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.34);
+    color: rgb(255, 255, 255);
+}
+
+.product-grid {
+    text-align: center;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0px 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+}
+
+.card .btnn{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+    border: none;
+    transition: transform 0.2s;
+    background-color: transparent;
+}
+
+.card .btnn:hover {
+    transform: scale(1.2);
+    color: rgb(0, 45, 0);
+}
+
+.card .btnn:hover:active {
+    transform: scale(0.8);
+    color: gray;
+}
+
+.product-grid .card{
+    border: transparent;
+}
+
+.card img{
+    filter: drop-shadow(0 0 12px rgb(0, 0, 0));
+    transition: transform 0.2s;
+}
+
+.card img:hover{
+    transform: scale(1.1);
+}
+
+/* Div User */
+
+.index  {
+    display: none; /* Dont Touc */
+    position: fixed; /* Dont Touc */
+    width: 550px;
+    text-align: center;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.893);
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    animation: open1 1.2s ease-in-out;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.index .btn-cerrarcarrito {
+    position: absolute;
+    width: 150px;
+    top: -25px;
+    right: -120px;
+    border-radius: 50%;
+    font-size: 90px;
+    padding: 10px;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    transform: scale(0.4);
+    border: transparent;
+    box-shadow: 0 0 25px black;
+    transition: transform, color 0.2s;
+}
+
+.index .btn-cerrarcarrito:hover {
+    transform: scale(0.45);
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+}
+/* Div Carrito */
+
+.popup {
+    padding: 30px;
+    display: none; /* Dont Touc */
+    position: fixed; /* Dont Touc */
+    width: 550px;
+    text-align: center;
+    bottom: 0%;
+    right: 0%;
+    height: 100%;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.893);
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    animation: open1 0.8s ease-in-out;
+    border-radius: 30px 0px 0px 30px;
+}
+
+@keyframes open1 {
+    0% {
+        margin-right: -28%;
+    }
+
+    100% {
+        margin-right: 0%;
+    }
+}
+
+@keyframes close {
+    0% {
+        margin-right: 0%;
+    }
+
+    100% {
+        margin-right: -28%;
+    }
+}
+
+.overlay {
+    display: none; /* Dont Touc */
+    position: fixed; /* Dont Touc */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.736);
+    z-index: 999;
+    backdrop-filter: blur(3px);
+}
+
+/* Contenido Carrito */
+
+.cart {
+
+    overflow-y: auto;
+    position: relative;
+    height: 87%;
+    border: 1px solid black;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.cart img {
+    display: flex;
+    align-items: start;
+    margin: 10px 20px;
+    background-color: rgb(211, 211, 211);
+    position: static;
+    width: 23%;
+    border-radius: 10%;
+}
+
+.car{
+    position: relative;
+}
+
+.car .marca {
+    position: absolute;
+    font-size: 20px;
+    top: 30px;
+    left: 150px;
+}
+
+.car .price {
+    position: absolute;
+    font-size: 25px;
+    font-weight: bold;
+    top: 1px;
+    left: 150px;
+}
+
+.car .talla {
+    font-size: 23px;
+    position: absolute;
+    font-weight: bold;
+    right: 50px;
+    top: 1px;
+    max-width: 12%;
+}
+
+.btn-cant{
+    position: relative;
+    width: 92px;
+    border-radius: 20px;
+    top: -45px;
+    left: 150px;
+    background-color: rgb(0, 0, 0);
+}
+
+.btn-cant button{
+    transform: scale(0.8);
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    transition: transform 0.2s;
+}
+
+.btn-cant button:hover{
+    transform: scale(0.9);
+}
+
+.btn-añadir {
+    position: absolute;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    right: 0px;
+}
+
+.btn-añadir:hover{
+    background-color: green;
+}
+
+.btn-eliminar {
+    margin-right: 65px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    right: initial;
+}
+
+.btn-eliminar:hover {
+    background-color: rgb(128, 0, 0);
+}
+
+.btn-cant p {
+    color: white;
+    position: absolute;
+    top: 1px;
+    left: 41px;
+}
+
+.popup .btn {
+    position: fixed;
+    font-size: 30px;
+}
+
+.cart h3{
+    position: fixed;
+    right: 78px;
+    bottom: 86px;
+    animation: brn 2s ease-in-out;
+    font-weight: bold;
+    font-size: 23px;
+    max-width: 28%;
+}
+
+@keyframes brn {
+    0% {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.popup .btn-pagar {
+    position: fixed;
+    max-width: 80%;
+    bottom: 25px;
+    right: 95px;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    width: 320px;
+    color: black;
+    padding: 10px;
+    border: 2px solid black;    
+    animation: btn 2s ease-in-out;
+    transition: transform 0.2s;
+}
+
+@keyframes btn {
+    0% {
+        color: rgba(0, 0, 0, 0);
+        border: 2px solid rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        color: rgb(0, 0, 0);
+        border: 2px solid rgb(0, 0, 0);
+    }
+}
+
+.popup .btn-pagar:hover {
+    transform: scale(1.1);
+    background-color: black;
+    color: white;
+}
+
+.popup .btn-cerrarcarrito {
+    position: absolute;
+    width: 150px;
+    top: -25px;
+    left: -120px;
+    border-radius: 50%;
+    font-size: 90px;
+    padding: 10px;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    transform: scale(0.4);
+    border: transparent;
+    box-shadow: 0 0 25px black;
+    transition: transform, color 0.2s;
+}
+
+.popup .btn-cerrarcarrito:hover {
+    transform: scale(0.45);
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border: none;
+}
+
+@media (max-width: 500px) {
+
+    .home {
+        gap: 5px;
+        text-align: center;
+    }
+
+    .home h1 {
+        margin: 10px 0px;
+        font-size: 35px;
+    }
+
+    .img-letter {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .icons {
+        position:static;
+    }
+
+    .search {
+        width: 80%;
+    }
+
+    .product-grid {
+        padding: 10px;
+        margin-top: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3%;
+    }  
+    
+    .card {
+        font-size: 120%;
+    }
+
+    .card .btnn{
+        margin-top: 10px;
+        width: 100%;
+        font-size: 22px;
+    }
+
+    @keyframes slide {
+            0% {
+                margin-left: 0%;
+            }
+    
+            100% {
+                margin-left: -100%;
+            }
+    }
+}
+
+@media (max-width: 720px) {
+
+    .home {
+        gap: 5px;
+        text-align: center;
+    }
+
+    .home h1 {
+        margin: 10px 0px;
+        font-size: 35px;
+    }
+
+    .img-letter {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .icons {
+        position: static;
+    }
+
+    .search {
+        width: 80%;
+    }
+
+    .product-grid {
+        padding: 10px;
+        margin-top: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3%;
+    }
+
+    .card {
+        font-size: 120%;
+    }
+
+
+    .card .btnn {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 22px;
+    }
+
+    @keyframes slide {
+        0% {
+            margin-left: 0%;
+        }
+
+        100% {
+            margin-left: -100%;
+        }
+    }
+}

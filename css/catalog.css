@@ -1,0 +1,77 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    padding: 0px;
+    cursor: url(/img/cursor.png), auto;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    position: relative;
+    margin: 0 10px;
+    animation: spin 1s linear infinite;
+}
+
+.spinner img {
+    width: 140px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.home h1 {
+    margin: 20px 0px;
+    font-size: 35px;
+}
+
+.img-letter {
+    width: 70%;
+    margin-top: 30px;
+}
+
+.navegation input {
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 20px;
+    color: black;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.navegation input:hover {
+    transform: scale(1.2);
+}
+
+.navegation input:active {
+    transform: scale(0.8);
+    color: gray;
+}
