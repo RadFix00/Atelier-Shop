@@ -67,47 +67,48 @@
             <div class="index" id="index">
                 <div class="form">
 
-                    <div>
-                        <button @click="currentForm = 'login'">Iniciar Sesión</button>
-                        <button @click="currentForm = 'register'">Registrarse</button>
-                    </div>
 
                     <div v-if="currentForm === 'login'">
-                        <h3 class="mb-4">Iniciar Sesión</h3>
+                        <h3 class="title-log">Iniciar Sesión</h3>
                         <form @submit.prevent="login">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">NickName</label>
+                            <div class="ingresar">
+                                <label for="username" class="">NickName</label>
                                 <input type="text" id="username" v-model="username" class="form-control" placeholder="Ingresa tu NickName">
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
+                            <div class="ingresar">
+                                <label for="password" class="">Password</label>
                                 <input type="password" id="password" v-model="password" class="form-control"
                                     placeholder="Ingresa tu Password">
                             </div>
                             <p v-if="errorMessage"> {{errorMessage }} </p>
-                            <button type="submit" class="">Iniciar Sesión</button>
+                            <button type="submit" class="btn-lg">Iniciar Sesión</button>
                         </form>
                     </div>
 
                     <div v-if="currentForm === 'register'">
-                        <h3 class="mb-4">Registrarse</h3>
+                        <h3 class="title-log">Registrarse</h3>
                         <form @submit.prevent="register">
-                            <div class="mb-3">
+                            <div class="ingresar">
                                 <label for="username" class="form-label">NickName</label>
                                 <input type="text" id="username" v-model="username" class="form-control"
                                     placeholder="Ingresa tu NickName">
                             </div>
-                            <div class="mb-3">
+                            <div class="ingresar">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" id="email" v-model="email" class="form-control" placeholder="Ingresa tu email">
                             </div>
-                            <div class="mb-3">
+                            <div class="ingresar">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" id="password" v-model="password" class="form-control"
                                     placeholder="Ingresa tu Password">
                             </div>
-                            <button type="submit" class="">Registrarse</button>
+                            <button type="submit" class="btn-lg">Registrarse</button>
                         </form>
+                    </div>
+
+                    <div class="btn-sel-log">
+                        <button @click="currentForm = 'login'">Iniciar Sesión</button>
+                        <button @click="currentForm = 'register'">Registrarse</button>
                     </div>
                     
                     <button class="btn-cerrarcarrito" @click="closeUser()">X</button>
@@ -140,11 +141,35 @@
             </div>
 
         </div>
+
        
-        
     </section>
+
     <footer>
+
+        <img class="fondo" src="/img/backfooter.png" alt="">
+    
+        <div class="foo-clas">
+            <div class="help">
+                <h1>¿Necesitas ayuda?</h1>
+                <a href="">Ayuda1</a>
+                <a href="">Ayuda2</a>
+                <a href="">Ayuda3</a>
+            </div>
+            <div class="atelier">
+                <h1>¿De donde surge atelier?</h1>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nihil voluptate voluptas accusantium similique vero nam rem eaque, veritatis assumenda!</h3>
+            </div>
+            <div class="redes">
+                <h1>Redes</h1>
+                <a href=""><img class="img-icon" src="/img/fb-icon.png" alt=""></a>
+                <a href=""><img class="img-icon" src="/img/tk-icon.png" alt=""></a>
+                <a href=""><img class="img-icon" src="/img/wp-icon.png" alt=""></a>
+                <a href=""><img class="img-icon" src="/img/ig-icon.png" alt=""></a>
+            </div>
+        </div>
     </footer>
+
     <script src="/js/preload.js"></script>
 </body>
 </html>
