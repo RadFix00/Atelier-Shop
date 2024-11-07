@@ -307,8 +307,8 @@
 /* Contenido Carrito */
 
 .cart {
-
     overflow-y: auto;
+    padding: 5px 0px;
     position: relative;
     height: 87%;
     border: 1px solid black;
@@ -326,22 +326,23 @@
 }
 
 .car{
-    position: relative;
+    position: sticky;
+    margin-bottom: 30px;
 }
 
 .car .marca {
     position: absolute;
     font-size: 20px;
-    top: 30px;
-    left: 150px;
+    top: 19%;
+    left: 30%;
 }
 
 .car .price {
     position: absolute;
     font-size: 25px;
     font-weight: bold;
-    top: 1px;
-    left: 150px;
+    top: 1%;
+    left: 30%;
 }
 
 .car .talla {
@@ -349,16 +350,16 @@
     position: absolute;
     font-weight: bold;
     right: 50px;
-    top: 1px;
+    top: 1%;
     max-width: 12%;
 }
 
 .btn-cant{
-    position: relative;
+    position: absolute;
     width: 92px;
     border-radius: 20px;
-    top: -45px;
-    left: 150px;
+    bottom: 10%;
+    left: 30%;
     background-color: rgb(0, 0, 0);
 }
 
@@ -414,11 +415,10 @@
 .cart h3{
     position: fixed;
     right: 78px;
-    bottom: 86px;
+    bottom: 10%;
     animation: brn 2s ease-in-out;
     font-weight: bold;
     font-size: 23px;
-    max-width: 28%;
 }
 
 @keyframes brn {
@@ -434,8 +434,8 @@
 .popup .btn-pagar {
     position: fixed;
     max-width: 80%;
-    bottom: 25px;
-    right: 95px;
+    bottom: 3%;
+    right: 105px;
     background-color: transparent;
     font-size: 20px;
     font-weight: bold;
@@ -541,6 +541,43 @@
                 margin-left: -100%;
             }
     }
+
+    .popup {
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        border-radius: 0px;
+    }  
+    
+    .cart {
+        height: 84%;
+        border-radius: 0px;
+    }
+
+    .popup .btn-pagar {
+        position: fixed;
+        left: 13%;
+        
+    }
+
+    .car .marca {
+        font-size: 18px;
+    }
+
+    .car .price {
+        font-size: 20px;
+    }
+
+    .car .talla {
+        font-size: 20px;
+        right: 30px;
+    }
+
+    .popup .btn-cerrarcarrito {
+        position: absolute;
+        top: 6px;
+        left: 42%;
+    }
 }
 
 @media (max-width: 720px) {
@@ -579,7 +616,6 @@
         font-size: 120%;
     }
 
-
     .card .btnn {
         margin-top: 10px;
         width: 100%;
@@ -595,4 +631,34 @@
             margin-left: -100%;
         }
     }
+
+    .popup {
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        border-radius: 0px;
+    }  
+    
+    .cart {
+        height: 84%;
+        border-radius: 0px;
+    }
+
+    .cart h3{
+        position: fixed;
+        left: 78px;
+        bottom: 10%;
+    }
+
+    .popup .btn-pagar {
+        right: 26%;
+        bottom: 3%;
+    }
+
+    .popup .btn-cerrarcarrito {
+        position: absolute;
+        top: 84%;
+        left: 74%;
+    }
+
 }
