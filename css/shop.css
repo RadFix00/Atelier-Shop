@@ -400,6 +400,8 @@
 }
 
 .btn-cant{
+    font-weight: bold;
+    font-size: 18px;
     position: absolute;
     width: 92px;
     border-radius: 20px;
@@ -535,6 +537,7 @@
     border: none;
 }
 
+
 .fondo{
     position: absolute;
     width: 100%;
@@ -543,14 +546,30 @@
 }
 
 .foo-clas {
+    justify-content: center;
     position: relative;
+    border: 1px solid red;
+    display: flex;
+    gap: 30px;
     color: rgb(0, 0, 0);
     filter: drop-shadow(0 0 12px rgb(0, 0, 0));
 }
 
+.foo-clas div{
+
+    text-align: center;
+    border: 1px solid red;
+    margin: 0px 20px ;
+}
+
 .foo-clas h1{
+    position: relative;
     font-size: 30px;
     font-weight: bold;
+}
+
+.redes a{
+    display: flex;
 }
 
 .redes .img-icon {
@@ -562,8 +581,6 @@
 .redes .img-icon:hover {
     transform: scale(1.2)
 }
-
-
 
 @media (max-width: 500px) {
 
@@ -652,6 +669,7 @@
         position: absolute;
         top: 6px;
         left: 42%;
+        box-shadow: none;
     }
     
     .index  {
@@ -673,8 +691,6 @@
     }
 
 }
-
-
 
 @media (max-width: 720px) {
 
@@ -755,6 +771,7 @@
         position: absolute;
         top: 84%;
         left: 74%;
+        box-shadow: none;
     }
 
     .index  {
