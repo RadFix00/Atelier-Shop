@@ -45,14 +45,14 @@ const store = new Vuex.Store({
     state: {
         cart: JSON.parse(localStorage.getItem('cart')) || [],
         products: [ 
-           { id: 0, marca: 'Pantalon Baggy', price: 42005 , talla:"XM" ,imagen: '../img/pant1.png' },
-           { id: 1, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: '../img/pant2.png' },
-           { id: 2, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: '../img/pant3.png' },
-           { id: 3, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: '../img/pant4.png' },
-           { id: 4, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: '../img/buzo1.png' },
-           { id: 5, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: '../img/buzo2.png' },
-           { id: 6, marca: 'Buzo Overzide', price: 42.0025, talla:"M" ,imagen: '../img/buzo3.png' },
-           { id: 7, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: '../img/buzo4.png' },
+           { id: 0, marca: 'Pantalon Baggy', price: 42005 , talla:"XM" ,imagen: 'img/pant1.png' },
+           { id: 1, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: 'img/pant2.png' },
+           { id: 2, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: 'img/pant3.png' },
+           { id: 3, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: 'img/pant4.png' },
+           { id: 4, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: 'img/buzo1.png' },
+           { id: 5, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: 'img/buzo2.png' },
+           { id: 6, marca: 'Buzo Overzide', price: 42.0025, talla:"M" ,imagen: 'img/buzo3.png' },
+           { id: 7, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: 'img/buzo4.png' },
         ]
     },
     mutations: {
