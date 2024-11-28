@@ -44,14 +44,14 @@ const store = new Vuex.Store({
     state: {
         cart: JSON.parse(localStorage.getItem('cart')) || [],
         products: [ 
-           { id: 0, marca: 'Pantalon Baggy', price: 42005 , talla:"XM" ,imagen: '../img/pant1.png' },
-           { id: 1, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: '../img/pant2.png' },
-           { id: 2, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: '../img/pant3.png' },
-           { id: 3, marca: 'Pantalon Baggy', price: 42.005, talla:"M" ,imagen: '../img/pant4.png' },
-           { id: 4, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: '../img/buzo1.png' },
-           { id: 5, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: '../img/buzo2.png' },
-           { id: 6, marca: 'Buzo Overzide', price: 42.0025, talla:"M" ,imagen: '../img/buzo3.png' },
-           { id: 7, marca: 'Buzo Overzide', price: 42.0035, talla:"M" ,imagen: '../img/buzo4.png' },
+           { id: 0, marca: 'Biggie big Negro Manchado', price: 160000, talla:"L" ,imagen: '../img/pant1.png' },
+           { id: 1, marca: 'Biggie big Azul Manchado', price: 120000, talla:"S" ,imagen: '../img/pant2.png' },
+           { id: 2, marca: 'Biggie big Negro', price: 100000, talla:"M" ,imagen: '../img/pant3.png' },
+           { id: 3, marca: 'Biggie big Azul Celeste', price: 150000, talla:"l" ,imagen: '../img/pant4.png' },
+           { id: 4, marca: 'Buzo Cremallera Cafe', price: 200000, talla:"XL" ,imagen: '../img/buzo1.png' },
+           { id: 5, marca: 'Buzo Hot Wheels', price: 220000, talla:"M" ,imagen: '../img/buzo2.png' },
+           { id: 6, marca: 'Buzo Cremallera Gris Manchado', price: 185000, talla:"S" ,imagen: '../img/buzo3.png' },
+           { id: 7, marca: 'Buzo Overzide Bushwick', price: 100000, talla:"XL" ,imagen: '../img/buzo4.png' },
         ]
     },
     mutations: {
