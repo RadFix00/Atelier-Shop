@@ -385,7 +385,9 @@
 .car .marca {
     position: absolute;
     font-size: 20px;
-    top: 19%;
+    max-width: 200px;
+    top: 23%;
+    text-align: start;
     left: 30%;
 }
 
@@ -412,7 +414,7 @@
     position: absolute;
     width: 92px;
     border-radius: 20px;
-    bottom: 10%;
+    bottom: 1%;
     left: 30%;
     background-color: rgb(0, 0, 0);
 }
