@@ -138,6 +138,10 @@
     color: gray;
 }
 
+#clock {
+    margin: 0.5em;
+}
+
 .cont-search {
     display: flex;
     justify-content: center;
@@ -591,7 +595,6 @@ footer{
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
-    justify-content: center;
 }
 
 .redes .img-icon {
@@ -837,30 +840,35 @@ footer{
         left: -40px;
         box-shadow: none;
     }
-    
+
     .foo-clas {
-        gap: 0.5em;
+        text-align: center;
+        display: block;
+        width: 100%;
         top: 8em;
     }
 
     .foo-clas h1 {
-        font-size: 1em;
+        margin-bottom: 1%;
+        font-size: 1.3em;
     }
 
     .foo-clas h3 {
         font-size: 0.64em;
-        max-width: 260px;
-        margin-top: 1.0em;
+        max-width: 100%;
+        padding: 10px;
+        margin-top: 1%;
     }
 
     .help a {
-        margin: 1em 0;
+        margin: 1% 1%;
+        display: inline;
         font-size: 0.65em;
     }
 
     .redes .img-icon {
         width: 2em;
-        margin: 1em 0;
+        margin: 1% 1.5em;
     }
 
 }
