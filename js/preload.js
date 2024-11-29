@@ -18,8 +18,6 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-updateClock();
-
 function openCarrito() {
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'block';
@@ -44,32 +42,20 @@ const store = new Vuex.Store({
     state: {
         cart: JSON.parse(localStorage.getItem('cart')) || [],
         products: [ 
-           { id: 0, marca: 'Biggie big Negro Manchado', price: 160000, talla:"L" ,imagen: '../img/pant1.png' },
-           { id: 1, marca: 'Biggie big Azul Manchado', price: 120000, talla:"S" ,imagen: '../img/pant2.png' },
-           { id: 2, marca: 'Biggie big Negro', price: 100000, talla:"M" ,imagen: '../img/pant3.png' },
-           { id: 3, marca: 'Biggie big Azul Celeste', price: 150000, talla:"l" ,imagen: '../img/pant4.png' },
-           { id: 4, marca: 'Buzo Cremallera Cafe', price: 200000, talla:"XL" ,imagen: '../img/buzo1.png' },
-           { id: 5, marca: 'Buzo Hot Wheels', price: 220000, talla:"M" ,imagen: '../img/buzo2.png' },
-           { id: 6, marca: 'Buzo Cremallera Gris Manchado', price: 185000, talla:"S" ,imagen: '../img/buzo3.png' },
-           { id: 7, marca: 'Buzo Overzide Bushwick', price: 100000, talla: "XL", imagen: '../img/buzo4.png' },
-           { id: 8, marca: 'Gorro Vans Cebra', price: 110000, talla:"Universal" ,imagen: '../img/gorro1.png' },
-           { id: 9, marca: 'Gorro Spitfire Camuflado', price: 120000, talla:"Universal" ,imagen: '../img/gorro2.png' },
-           { id: 10, marca: 'Gorro Skate Terror Verde', price: 100000, talla:"Universal" ,imagen: '../img/gorro3.png' },
-           { id: 11, marca: 'Gorro Vans Cuadrado', price: 110000, talla:"Universal" ,imagen: '../img/gorro4.png' },
-           { id: 12, marca: 'Gorro Hzn', price: 120000, talla:"Universal" ,imagen: '../img/gorro5.png' },
-            { id: 13, marca: 'Pesquero Vans Cuadrado', price: 80000, talla: "Universal", imagen: '../img/gorro6.png' },{ id: 3, marca: 'Biggie big Azul Celeste', price: 150000, talla:"l" ,imagen: '../img/pant4.png' },
-           { id: 14, marca: 'Buzo Cremallera Cafe', price: 200000, talla:"XL" ,imagen: '../img/buzo1.png' },
-           { id: 15, marca: 'Buzo Hot Wheels', price: 220000, talla:"M" ,imagen: '../img/buzo2.png' },
-           { id: 16, marca: 'Buzo Cremallera Gris Manchado', price: 185000, talla:"S" ,imagen: '../img/buzo3.png' },
-           { id: 17, marca: 'Buzo Overzide Bushwick', price: 100000, talla: "XL", imagen: '../img/buzo4.png' },
-           { id: 18, marca: 'Gorro Vans Cebra', price: 110000, talla:"Universal" ,imagen: '../img/gorro1.png' },
-           { id: 19, marca: 'Gorro Spitfire Camuflado', price: 120000, talla:"Universal" ,imagen: '../img/gorro2.png' },
-           { id: 20, marca: 'Gorro Skate Terror Verde', price: 100000, talla:"Universal" ,imagen: '../img/gorro3.png' },
-           { id: 21, marca: 'Gorro Vans Cuadrado', price: 110000, talla:"Universal" ,imagen: '../img/gorro4.png' },
-           { id: 22, marca: 'Gorro Hzn', price: 120000, talla:"Universal" ,imagen: '../img/gorro5.png' },
-            { id: 23, marca: 'Pesquero Vans Cuadrado', price: 80000, talla: "Universal", imagen: '../img/gorro6.png' },
-            
-           
+           { id: 0, marca: 'Biggie big Negro Manchado', price: 160000, talla:"L" ,imagen: '../img/pant1.png', categoria: 'pantalon' },
+           { id: 1, marca: 'Biggie big Azul Manchado', price: 120000, talla:"S" ,imagen: '../img/pant2.png', categoria: 'pantalon' },
+           { id: 2, marca: 'Biggie big Negro', price: 100000, talla:"M" ,imagen: '../img/pant3.png', categoria: 'pantalon' },
+           { id: 3, marca: 'Biggie big Azul Celeste', price: 150000, talla:"l" ,imagen: '../img/pant4.png', categoria: 'pantalon' },
+           { id: 4, marca: 'Buzo Cremallera Cafe', price: 200000, talla:"XL" ,imagen: '../img/buzo1.png', categoria: 'buzo' },
+           { id: 5, marca: 'Buzo Hot Wheels', price: 220000, talla:"M" ,imagen: '../img/buzo2.png', categoria: 'buzo' },
+           { id: 6, marca: 'Buzo Cremallera Gris Manchado', price: 185000, talla:"S" ,imagen: '../img/buzo3.png', categoria: 'buzo' },
+           { id: 7, marca: 'Buzo Overzide Bushwick', price: 100000, talla: "XL", imagen: '../img/buzo4.png', categoria: 'buzo' },
+           { id: 8, marca: 'Gorro Vans Cebra', price: 110000, talla:"Universal" ,imagen: '../img/gorro1.png', categoria: 'gorro' },
+           { id: 9, marca: 'Gorro Spitfire Camuflado', price: 120000, talla:"Universal" ,imagen: '../img/gorro2.png', categoria: 'gorro' },
+           { id: 10, marca: 'Gorro Skate Terror Verde', price: 100000, talla:"Universal" ,imagen: '../img/gorro3.png', categoria: 'gorro' },
+           { id: 11, marca: 'Gorro Vans Cuadrado', price: 110000, talla:"Universal" ,imagen: '../img/gorro4.png', categoria: 'gorro' },
+           { id: 12, marca: 'Gorro Hzn', price: 120000, talla:"Universal" ,imagen: '../img/gorro5.png', categoria: 'gorro' },
+           { id: 13, marca: 'Pesquero Vans Cuadrado', price: 80000, talla: "Universal", imagen: '../img/gorro6.png', categoria: 'gorro' }, 
         ]
     },
     mutations: {
@@ -118,8 +104,6 @@ const store = new Vuex.Store({
             }));
         }
     }
-
-
 });
 
 new Vue({
@@ -185,3 +169,21 @@ new Vue({
         }
     }
 });
+
+new Vue({
+        el: '#catalogo',
+        store,  // Enlazamos el store de Vuex
+        computed: {
+            categories() {
+                return this.$store.getters.categories;
+            },
+            getProductsByCategory() {
+                return this.$store.getters.productsByCategory;
+            },
+            formatPrice() {
+                return this.$store.getters.formatPrice;
+            }
+        }
+    });
+        
+

@@ -75,3 +75,79 @@
     transform: scale(0.8);
     color: gray;
 }
+
+.product-grid {
+    display: flex;
+
+}
+
+a img {
+    width: 30%;
+}
+
+footer {
+    margin-top: 5em;
+    position: relative;
+    background: none;
+}
+
+.fondo-foo {
+    opacity: 0.4;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    height: 400px;
+    background-image: url(../img/backfooter.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.foo-clas {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 2em;
+    top: 9em;
+    color: rgb(0, 0, 0);
+    filter: drop-shadow(0 0 12px rgb(0, 0, 0));
+}
+
+.foo-clas h1 {
+    color: rgb(0, 0, 0);
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.foo-clas h3 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    max-width: 720px;
+    margin-top: 2.4em;
+}
+
+.help a {
+    margin: 0.8em 0;
+    display: flex;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    justify-content: start;
+}
+
+.redes .img-icon {
+    width: 3em;
+    margin: 2em 0;
+    transition: transform 0.2s;
+}
+
+.redes .img-icon:hover {
+    transform: scale(1.2)
+}
