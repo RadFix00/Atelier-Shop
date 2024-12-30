@@ -186,4 +186,55 @@ new Vue({
         }
     });
         
+const images = [
+    '../img/5.jpg',
+    '../img/1.jpg',
+    '../img/2.jpg',
+    '../img/3.jpg',
+    '../img/4.jpg',
+    '../img/6.jpg',
+    '../img/7.jpg',
+    '../img/8.jpg',
+    '../img/9.jpg',
+    '../img/10.jpg',
+    '../img/11.jpg',
+    '../img/12.jpg',
+    '../img/13.jpg',
+    '../img/14.jpg',
+    '../img/15.jpg',
+    '../img/16.jpg',
+    '../img/17.jpg',
+    '../img/18.jpg',
+    '../img/19.jpg',
+    '../img/20.jpg'
+];
 
+const imagelibreria = document.getElementById('libreria');
+let availableImages = [...images]; // Copia inicial de las imágenes disponibles
+
+// Función para cargar imágenes aleatorias sin repetir
+function cargarRamdom() {
+    for (let i = 0; i < 4; i++) {
+        if (availableImages.length === 0) {
+            console.log('No quedan más imágenes disponibles.');
+            return; // Salir si no hay más imágenes
+        }
+
+        const randomIndex = Math.floor(Math.random() * availableImages.length);
+        const selectedImage = availableImages.splice(randomIndex, 1)[0]; // Eliminar la imagen seleccionada
+
+        const img = document.createElement('img');
+        img.src = selectedImage;
+        imagelibreria.appendChild(img);
+    }
+}
+
+// Evento de scroll para cargar más imágenes
+window.addEventListener('scroll', () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+        cargarRamdom();
+    }
+});
+
+// Cargar imágenes iniciales
+cargarRamdom();

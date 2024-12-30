@@ -5,6 +5,7 @@
     cursor: url(/img/cursor.png), auto;
 }
 
+
 #preloader {
     position: fixed;
     top: 0;
@@ -37,6 +38,22 @@
         transform: rotate(360deg);
     }
 }
+
+#libreria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#libreria img {
+    width: 50%;
+    transition: transform 0.2s;
+}
+
+#libreria img:hover {
+    transform: scale(1.2);
+}
+
 
 .home {
     position: relative;
