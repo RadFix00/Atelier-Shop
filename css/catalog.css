@@ -2,7 +2,7 @@
     font-family: 'Courier New', Courier, monospace;
     margin: 0px;
     padding: 0px;
-    cursor: url(/img/cursor.png), auto;
+    cursor: url(../img/cursor.png), auto;
 }
 
 
@@ -46,7 +46,7 @@
 }
 
 .row{
-    background: linear-gradient(to bottom,#ffffffef, #ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00 , #ffffff00), url(/img/ascii-art1.png);
+    background: linear-gradient(to bottom,#ffffffef, #ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00 , #ffffff00), url(../img/ascii-art1.png);
     display: flex;
     justify-content: center;
 }
@@ -100,7 +100,7 @@
 
 .navegation input:hover {
     transform: scale(1.2);
-    cursor: url(/img/cursor.png), auto;
+    cursor: url(../img/cursor.png), auto;
 }
 
 .navegation input:active {
