@@ -206,7 +206,15 @@ const images = [
     '../img/17.jpg',
     '../img/18.jpg',
     '../img/12.jpg',
-    '../img/20.jpg'
+    '../img/20.jpg',
+    '../img/21.jpg',
+    '../img/22.jpg',
+    '../img/23.jpg',
+    '../img/24.jpg',
+    '../img/25.jpg',
+    '../img/26.jpg',
+    '../img/27.jpg',
+    '../img/28.jpg'
 ];
 
 const imagelibreria = document.getElementById('libreria');
