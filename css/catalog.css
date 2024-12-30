@@ -39,22 +39,27 @@
     }
 }
 
-#libreria{
-    max-width: 80%;
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+#libreria {
+    max-width: 70%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 #libreria img {
     width: 50%;
-    transition: transform 0.2s;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s;
 }
 
 #libreria img:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
-
 
 .home {
     position: relative;
