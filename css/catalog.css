@@ -40,6 +40,7 @@
 }
 
 .row{
+    background-image: url(/img/ascii-art1.png);
     display: flex;
     justify-content: center;
 }
