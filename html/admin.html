@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="stylesheet" href="../css/catalog.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuex@3.6.2/dist/vuex.js"></script>
 </head>
 <body>
+    <div id="preloader">
+        <div class="spinner"><img src="../img/loader.png" alt=""></div>
+        <h1>Loading...</h1>
+    </div>
+
+    <section>
+        <div class="home">
+            <img class="img-letter" src="../img/letter.png" alt="letter">
+            <div class="navegation">
+                <a href="#productos"><input type="button" value="Productos"></a>
+                <a href="#productos"><input type="button" value="Precios"></a>
+                <a href="#productos"><input type="button" value="Promociones"></a>
+                <a href="#productos"><input type="button" value="Ordenes"></a>
+                <a href="#productos"><input type="button" value="Atelier"></a>
+            </div>
+        
+            <h1 id="productos">Productos</h1>
+    </section>
+
+    <script src="../js/preload.js"></script>
     
 </body>
 </html>
