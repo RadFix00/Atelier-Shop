@@ -57,6 +57,11 @@ const store = new Vuex.Store({
             { id: 11, marca: 'Gorro Vans Cuadrado', price: 110000, talla: "Universal", imagen: '../img/gorro4.png', categoria: 'gorro' },
             { id: 12, marca: 'Gorro Hzn', price: 120000, talla: "Universal", imagen: '../img/gorro5.png', categoria: 'gorro' },
             { id: 13, marca: 'Pesquero Vans Cuadrado', price: 80000, talla: "Universal", imagen: '../img/gorro6.png', categoria: 'gorro' },
+            { id: 14, marca: 'Camiseta Negra Fit', price: 80000, talla: "L", imagen: '../img/camiseta1.png', categoria: 'camiseta' },
+            { id: 15, marca: 'Camiseta Gris neosigilismo', price: 130000, talla: "XL", imagen: '../img/camiseta2.png', categoria: 'camiseta' },
+            { id: 16, marca: 'Camiseta Gris Star', price: 150000, talla: "Universal", imagen: '../img/camiseta3.png', categoria: 'camiseta' },
+            { id: 17, marca: 'Camiseta blanca tokio', price: 120000, talla: "XL", imagen: '../img/camiseta4.png', categoria: 'camiseta' },
+            { id: 18, marca: 'Camiseta Gris Berlin', price: 120000, talla: "L", imagen: '../img/camiseta5.png', categoria: 'camiseta' },
         ]
     },
     mutations: {
@@ -122,8 +127,9 @@ new Vue({
             { name: 'Pantalones', image: '../img/pantalon-category.png' },  
             { name: 'Buzos', image: '../img/buzo-category.png' }, 
             { name: 'Gorros', image: '../img/gorro-category.png' },
-            { name: 'Camisetas', image: '../img/gorro-category.png' },
+            { name: 'Camisetas', image: '../img/camiseta-category.png' },
             { name: 'Medias', image: '../img/gorro-category.png' },
+            { name: 'Bermudas', image: '../img/gorro-category.png' }
         ],
         busqueda: '',
         currentForm: 'login', 
