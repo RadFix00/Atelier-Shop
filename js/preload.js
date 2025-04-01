@@ -38,24 +38,25 @@ function closeUser() {
     document.getElementById('index').style.display = 'none';
 }
 
+// Definir Vuex Store
 const store = new Vuex.Store({
     state: {
         cart: JSON.parse(localStorage.getItem('cart')) || [],
-        products: [ 
-           { id: 0, marca: 'Biggie big Negro Manchado', price: 160000, talla:"L" ,imagen: '../img/pant1.png', categoria: 'pantalon' },
-           { id: 1, marca: 'Biggie big Azul Manchado', price: 120000, talla:"S" ,imagen: '../img/pant2.png', categoria: 'pantalon' },
-           { id: 2, marca: 'Biggie big Negro', price: 100000, talla:"M" ,imagen: '../img/pant3.png', categoria: 'pantalon' },
-           { id: 3, marca: 'Biggie big Azul Celeste', price: 150000, talla:"l" ,imagen: '../img/pant4.png', categoria: 'pantalon' },
-           { id: 4, marca: 'Buzo Cremallera Cafe', price: 200000, talla:"XL" ,imagen: '../img/buzo1.png', categoria: 'buzo' },
-           { id: 5, marca: 'Buzo Hot Wheels', price: 220000, talla:"M" ,imagen: '../img/buzo2.png', categoria: 'buzo' },
-           { id: 6, marca: 'Buzo Cremallera Gris Manchado', price: 185000, talla:"S" ,imagen: '../img/buzo3.png', categoria: 'buzo' },
-           { id: 7, marca: 'Buzo Overzide Bushwick', price: 100000, talla: "XL", imagen: '../img/buzo4.png', categoria: 'buzo' },
-           { id: 8, marca: 'Gorro Vans Cebra', price: 110000, talla:"Universal" ,imagen: '../img/gorro1.png', categoria: 'gorro' },
-           { id: 9, marca: 'Gorro Spitfire Camuflado', price: 120000, talla:"Universal" ,imagen: '../img/gorro2.png', categoria: 'gorro' },
-           { id: 10, marca: 'Gorro Skate Terror Verde', price: 100000, talla:"Universal" ,imagen: '../img/gorro3.png', categoria: 'gorro' },
-           { id: 11, marca: 'Gorro Vans Cuadrado', price: 110000, talla:"Universal" ,imagen: '../img/gorro4.png', categoria: 'gorro' },
-           { id: 12, marca: 'Gorro Hzn', price: 120000, talla:"Universal" ,imagen: '../img/gorro5.png', categoria: 'gorro' },
-           { id: 13, marca: 'Pesquero Vans Cuadrado', price: 80000, talla: "Universal", imagen: '../img/gorro6.png', categoria: 'gorro' }, 
+        products: [
+            { id: 0, marca: 'Biggie big Negro Manchado', price: 160000, talla: "L", imagen: '../img/pant1.png', categoria: 'pantalon' },
+            { id: 1, marca: 'Biggie big Azul Manchado', price: 120000, talla: "S", imagen: '../img/pant2.png', categoria: 'pantalon' },
+            { id: 2, marca: 'Biggie big Negro', price: 100000, talla: "M", imagen: '../img/pant3.png', categoria: 'pantalon' },
+            { id: 3, marca: 'Biggie big Azul Celeste', price: 150000, talla: "l", imagen: '../img/pant4.png', categoria: 'pantalon' },
+            { id: 4, marca: 'Buzo Cremallera Cafe', price: 200000, talla: "XL", imagen: '../img/buzo1.png', categoria: 'buzo' },
+            { id: 5, marca: 'Buzo Hot Wheels', price: 220000, talla: "M", imagen: '../img/buzo2.png', categoria: 'buzo' },
+            { id: 6, marca: 'Buzo Cremallera Gris Manchado', price: 185000, talla: "S", imagen: '../img/buzo3.png', categoria: 'buzo' },
+            { id: 7, marca: 'Buzo Overzide Bushwick', price: 100000, talla: "XL", imagen: '../img/buzo4.png', categoria: 'buzo' },
+            { id: 8, marca: 'Gorro Vans Cebra', price: 110000, talla: "Universal", imagen: '../img/gorro1.png', categoria: 'gorro' },
+            { id: 9, marca: 'Gorro Spitfire Camuflado', price: 120000, talla: "Universal", imagen: '../img/gorro2.png', categoria: 'gorro' },
+            { id: 10, marca: 'Gorro Skate Terror Verde', price: 100000, talla: "Universal", imagen: '../img/gorro3.png', categoria: 'gorro' },
+            { id: 11, marca: 'Gorro Vans Cuadrado', price: 110000, talla: "Universal", imagen: '../img/gorro4.png', categoria: 'gorro' },
+            { id: 12, marca: 'Gorro Hzn', price: 120000, talla: "Universal", imagen: '../img/gorro5.png', categoria: 'gorro' },
+            { id: 13, marca: 'Pesquero Vans Cuadrado', price: 80000, talla: "Universal", imagen: '../img/gorro6.png', categoria: 'gorro' },
         ]
     },
     mutations: {
@@ -102,21 +103,35 @@ const store = new Vuex.Store({
                 ...product,
                 formattedPrice: new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimunFractionDigits: 0 }).format(product.price)
             }));
+        },
+        categories(state) {
+            return [...new Set(state.products.map(product => product.categoria))]; // Obtiene categorías únicas
+        },
+        productsByCategory: (state) => (categoria) => {
+            return state.products.filter(producto => producto.categoria === categoria);
         }
     }
 });
 
+// Instancia de Vue para la aplicación completa
 new Vue({
     el: '#app',
     store,
     data: {
+        categories: [
+            { name: 'Pantalones', image: '../img/pantalon-category.png' },  
+            { name: 'Buzos', image: '../img/buzo-category.png' }, 
+            { name: 'Gorros', image: '../img/gorro-category.png' },
+            { name: 'Camisetas', image: '../img/gorro-category.png' },
+            { name: 'Medias', image: '../img/gorro-category.png' },
+        ],
         busqueda: '',
         currentForm: 'login', 
         email: '',
         password: '',
         username: '',
-        errorMessage:"",
-        apiUrl:"http://127.0.0.1:5000/login"
+        errorMessage: "",
+        apiUrl: "http://127.0.0.1:5000/login"
     },
     computed: {
         cartItems() {
@@ -129,6 +144,9 @@ new Vue({
             return this.$store.getters.productsList.filter(producto =>
                 producto.marca.toLowerCase().includes(this.busqueda.toLowerCase())
             );
+        },
+        categories() {
+            return this.$store.getters.categories; // Accede a las categorías desde Vuex
         }
     },
     methods: {
@@ -146,7 +164,7 @@ new Vue({
         },
         async login() {
             if (this.username.trim() === "" || this.password.trim() === "") {
-                this.errorMessage = "No se ha podido iniciar sesion faltan datos"   
+                this.errorMessage = "No se ha podido iniciar sesion faltan datos";   
                 return;
             }
             else {
@@ -170,21 +188,6 @@ new Vue({
     }
 });
 
-new Vue({
-        el: '#catalogo',
-        store,  // Enlazamos el store de Vuex
-        computed: {
-            categories() {
-                return this.$store.getters.categories;
-            },
-            getProductsByCategory() {
-                return this.$store.getters.productsByCategory;
-            },
-            formatPrice() {
-                return this.$store.getters.formatPrice;
-            }
-        }
-    });
         
 const images = [
     '../img/5.jpg',
@@ -224,7 +227,6 @@ let availableImages = [...images]; // Copia inicial de las imágenes disponibles
 function cargarRamdom() {
     for (let i = 0; i < 4; i++) {
         if (availableImages.length === 0) {
-            console.log('No quedan más imágenes disponibles.');
             return; // Salir si no hay más imágenes
         }
 

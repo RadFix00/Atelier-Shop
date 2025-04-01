@@ -28,25 +28,21 @@
         
             <h1>Catalogo</h1>
 
-            <div id="catalogo">
-            
-                <div v-for="producto in getProductsByCategory(categoria)" :key="producto.id" class="product">
-                    <h2>{{ categoria }}</h2>
-                    <div v-for="producto in getProductsByCategory(categoria)" :key="producto.id" class="product">
-                        <img :src="producto.imagen" :alt="producto.marca" />
-                        <h3>{{ producto.marca }}</h3>
-                        <p>{{ formatPrice(producto.price) }}</p>
+                <!-- Mostrar productos filtrados -->
+            <div id="app">
+                <div id="categories">
+                    <div v-for="category in categories" :key="category.name" class="category-item">
+                        <h3 class="name_category">{{ category.name }}</h3>
+                        <img :src="category.image" :alt="category.name" class="category-image">
                     </div>
                 </div>
-            
             </div>
 
+        </div>
     </section>
 
-    <footer >
-
+    <footer>
         <div class="fondo-foo"></div>
-    
         <div class="foo-clas">
             <div class="help">
                 <h1>¿Necesitas ayuda?</h1>
@@ -71,5 +67,6 @@
     </footer>
     
     <script src="../js/preload.js"></script>
+    <script src="../js/catalog.js"></script> <!-- Make sure your script is linked -->
 </body>
 </html>

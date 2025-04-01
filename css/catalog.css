@@ -45,14 +45,8 @@
     font-weight: bold;
 }
 
-.row{
-    background: linear-gradient(to bottom,#ffffffef, #ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00,#ffffff00 , #ffffff00), url(../img/acii-art1.png);
-    display: flex;
-    justify-content: center;
-}
-
 #libreria {
-    margin: 8% 0;
+    margin: 2% 0;
     max-width: 70%;
     display: flex;
     flex-wrap: wrap;
@@ -88,6 +82,12 @@
     margin-top: 30px;
 }
 
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
 .navegation input {
     background-color: transparent;
     font-size: 20px;
@@ -108,10 +108,29 @@
     color: gray;
 }
 
-.product-grid {
-    display: flex;
+.name_category{
+    text-align: center;
+    margin: 25px;
+}
+
+#categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
 
 }
+
+#categories img:hover{
+    transform: scale(1.05);
+}
+
+
+#categories img {
+    width: 450px;
+    transition: transform 0.25s;
+}
+
+
 
 a img {
     width: 30%;
